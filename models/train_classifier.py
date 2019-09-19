@@ -72,12 +72,11 @@ def build_model():
     ])
 
     parameters = {
-        'vect__ngram_range': ((1, 1), (1, 2)),
         'clf__estimator__n_estimators': [50, 100],
         'clf__estimator__min_samples_split': [2, 4],
     }
 
-    cv = GridSearchCV(pipeline, param_grid=parameters, verbose=1, n_jobs=4)
+    cv = GridSearchCV(pipeline, param_grid=parameters, verbose=2)
     return cv
 
 
